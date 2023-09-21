@@ -1,0 +1,5 @@
+apiVersion: v2
+description: foobar
+name: chart
+type: application
+version: 0.8.0

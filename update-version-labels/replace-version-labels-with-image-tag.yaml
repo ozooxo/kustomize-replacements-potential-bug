@@ -1,0 +1,14 @@
+source:
+  kind: Deployment
+  name: app
+  fieldPath: spec.template.spec.containers.0.image
+  options:
+    delimiter: ':'
+    index: 1
+targets:
+  - select:
+      kind: Ingress
+    fieldPaths:
+      - metadata.labels.[app.kubernetes.io/version]
+    options:
+      create: true
